@@ -1,2 +1,2 @@
 # isms-starter-kit
-Personal project: ISO 27001-style ISMS for a fictional SaaS company
+Personal project on a fictional company. Work in progress.
