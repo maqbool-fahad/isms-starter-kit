@@ -12,7 +12,7 @@ Havelmetrics' cloud dashboard for retail customers. It includes:
 
 ## 2. Locations
 - The Berlin office in Kreuzberg, used two days a week
-- Remote work locations, mainly employees' homes
+- Remote work locations, mainly employees' homes. Remote staff use home networks and sometimes public Wi-Fi, without a company VPN present. 
 
 ## 3. Exclusions
 - Customers' own IT systems, because Havelmetrics does not control them
