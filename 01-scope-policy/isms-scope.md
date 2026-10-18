@@ -29,4 +29,7 @@ Havelmetrics' cloud dashboard for retail customers. It includes:
 
 ## 5. Review
 The scope is reviewed once a year and whenever there is a major change,
-such as a new product, office or cloud provider.  
+such as a new product, office or cloud provider. It is also reviewed after
+a major security incident, a significant audit finding, or a change in
+legal or contractual requirements, such as new GDPR guidance or NIS2
+obligations.
