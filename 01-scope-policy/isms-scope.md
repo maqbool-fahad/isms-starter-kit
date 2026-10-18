@@ -16,11 +16,15 @@ Havelmetrics' cloud dashboard for retail customers. It includes:
 
 ## 3. Exclusions
 - Customers' own IT systems, because Havelmetrics does not control them
-- Marketing website hosting, because it holds no customer data
+- Marketing website (hosted by an external provider): excluded because it
+  contains only public information and is separate from the StoreSight
+  environment. Contact form submissions are forwarded to the customer
+  support tool, which is in scope (see Section 4). Website admin accounts
+  use separate credentials from company systems.
 
 ## 4. Interfaces and dependencies
 - Suppliers: payment provider, customer support tool, backup service
-- Customer sales data flows into StoreSight through secure connections
+- Customer sales data flows into StoreSight through secure connections e.g customers upload sales data through an encrypted API or file transfer
 - Staff access Havelmetrics systems from company laptops and, for email, from personal phones
 
 ## 5. Review
