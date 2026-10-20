@@ -1,0 +1,94 @@
+Control,Theme,Control name,Applicable,Justification,Linked risks,Status,Reference
+5.1,Organizational,Policies for information security,Yes,"Required by ISO 27001. Policy approved by management; topic policies (access control, incident response) still being written.",,Partially implemented,01-scope-policy/information-security-policy.md
+5.2,Organizational,Information security roles and responsibilities,Yes,"ISMS Manager and risk owners are named. Only one part-time IT administrator holds admin knowledge, so cover is missing.",R10,Partially implemented,Risk register owners column
+5.3,Organizational,Segregation of duties,Yes,"One person should not hold all admin rights or approve and deploy their own production changes. Limited by team size, so compensate with review and logging.","R02, R10",Planned,Role-based access in 04-policies/access-control-policy.md (Step 6)
+5.4,Organizational,Management responsibilities,Yes,Management approves the policy and alone accepts High and Critical risks. No management review has been held yet.,,Partially implemented,02-risk/risk-assessment-method.md
+5.5,Organizational,Contact with authorities,Yes,GDPR requires reporting personal data breaches to the supervisory authority within 72 hours. NIS2 contacts needed if it applies.,"R23, R24",Planned,Contact list in 04-policies/incident-response-policy.md (Step 6)
+5.6,Organizational,Contact with special interest groups,Yes,"Subscribe to vendor security advisories (Microsoft, GitHub) and BSI warnings. Low cost, useful for early notice.",,Planned,Owner: ISMS Manager
+5.7,Organizational,Threat intelligence,Yes,"Proportionate to a 40-person company: use Microsoft Defender for Cloud alerts and public advisories, no dedicated team.",R14,Planned,With Microsoft Defender for Cloud (R14)
+5.8,Organizational,Information security in project management,Yes,New features and tools that touch customer data need a short security and privacy check before start.,,Planned,Checklist to be added to the policy set
+5.9,Organizational,Inventory of information and other associated assets,Yes,"Risk assessment is asset based. Assets are listed inside the risk register only, with no separate inventory yet.",,Partially implemented,02-risk/risk-register.csv (Asset column)
+5.10,Organizational,Acceptable use of information and other associated assets,Yes,"Staff need clear rules for company accounts, laptops and personal phones used for work email.","R06, R18",Planned,"Acceptable use rules, to be added to the policy set"
+5.11,Organizational,Return of assets,Yes,Leavers must return laptops and other devices on their last working day.,R07,Planned,Leaver checklist (R07)
+5.12,Organizational,Classification of information,Yes,Customer data needs stricter handling than internal documents. Classification is the base for labels and sharing rules.,R18,Planned,Sensitivity labels (R18)
+5.13,Organizational,Labelling of information,Yes,Microsoft 365 sensitivity labels can enforce sharing limits for customer data.,R18,Planned,Sensitivity labels (R18)
+5.14,Organizational,Information transfer,Yes,Files and customer data are sent by email and file sharing. External sharing must be limited to approved domains.,R18,Planned,External sharing restriction (R18)
+5.15,Organizational,Access control,Yes,"Access to Azure, GitHub, Microsoft 365 and the support tool must follow need-to-know. Sign-in through Entra ID exists, but rules are not written down.","R02, R26",Partially implemented,04-policies/access-control-policy.md (Step 6)
+5.16,Organizational,Identity management,Yes,"Each person has a unique Entra ID account. The joiner, mover and leaver process is not documented.",R07,Partially implemented,Leaver checklist (R07)
+5.17,Organizational,Authentication information,Yes,"Minimum password length is set, but there is no password manager and passwords are still reused.","R01, R17",Partially implemented,Password manager rollout (R17)
+5.18,Organizational,Access rights,Yes,"Access is removed when the IT administrator is told, with no deadline. Rights need regular review.","R02, R07, R13",Partially implemented,04-policies/access-control-policy.md (Step 6)
+5.19,Organizational,Information security in supplier relationships,Yes,"Payment provider, support tool and backup service handle company or customer data. No supplier register exists.",R09,Planned,Supplier register (R09)
+5.20,Organizational,Addressing information security within supplier agreements,Yes,Data processing agreements are required under GDPR Article 28. Standard contract terms exist but are not checked for security.,R09,Partially implemented,DPA review for three key suppliers (R09)
+5.21,Organizational,Managing information security in the ICT supply chain,Yes,"StoreSight depends on cloud services and third-party libraries, which are part of the supply chain.","R09, R29",Planned,Dependency scanning (R29)
+5.22,Organizational,"Monitoring, review and change management of supplier services",Yes,Key suppliers' security documents must be reviewed at least yearly.,R09,Planned,Supplier register (R09)
+5.23,Organizational,Information security for use of cloud services,Yes,All core systems run in Azure and Microsoft 365. Responsibility split with Microsoft must be defined and configurations reviewed.,"R03, R09",Partially implemented,Quarterly database configuration review (R03)
+5.24,Organizational,Information security incident management planning and preparation,Yes,"No incident plan exists. Needed for the 24-hour internal reporting objective, 72-hour GDPR deadline and NIS2 timelines.","R19, R23, R24",Planned,04-policies/incident-response-policy.md (Step 6)
+5.25,Organizational,Assessment and decision on information security events,Yes,Someone must decide quickly whether an event is an incident and how severe it is.,R23,Planned,Severity levels in 04-policies/incident-response-policy.md (Step 6)
+5.26,Organizational,Response to information security incidents,Yes,"Defined roles, steps and contact details for containing and recovering from incidents.",R23,Planned,04-policies/incident-response-policy.md (Step 6)
+5.27,Organizational,Learning from information security incidents,Yes,Lessons from incidents feed back into the risk register and policies.,R23,Planned,Post-incident review in 04-policies/incident-response-policy.md (Step 6)
+5.28,Organizational,Collection of evidence,Yes,"Logs and device evidence must be preserved for customer, authority or legal follow-up.","R14, R23",Planned,Evidence steps in 04-policies/incident-response-policy.md (Step 6)
+5.29,Organizational,Information security during disruption,Yes,Security controls must stay in place during outages and ransomware recovery.,"R08, R10, R16, R30",Planned,"Recovery targets (R08, R16)"
+5.30,Organizational,ICT readiness for business continuity,Yes,"Recovery time and recovery point targets, and a tested failover plan, are needed for customers who depend on StoreSight.","R08, R16",Planned,"Restore test and failover plan (R08, R16)"
+5.31,Organizational,"Legal, statutory, regulatory and contractual requirements",Yes,GDPR applies. NIS2 applicability is not yet assessed. Two enterprise customers have contractual security expectations.,"R22, R23, R24, R25",Partially implemented,NIS2 applicability assessment (R24)
+5.32,Organizational,Intellectual property rights,Yes,Company uses licensed software and open-source libraries. Licence compliance should be checked with dependency tooling.,,Planned,Licence view in dependency scanning (R29)
+5.33,Organizational,Protection of records,Yes,"ISMS records, contracts and logs must be kept and protected. Support tickets need retention limits.",R26,Planned,Retention limits (R26)
+5.34,Organizational,Privacy and protection of PII,Yes,"StoreSight processes customers' personal data, so GDPR duties apply (requests, breaches, protection).","R03, R22, R23, R26",Partially implemented,Request process with 30-day tracking (R22)
+5.35,Organizational,Independent review of information security,Yes,Required by ISO 27001 (internal audit). In a small company this means someone outside the ISMS Manager role.,,Planned,05-audit (Step 7)
+5.36,Organizational,"Compliance with policies, rules and standards for information security",Yes,Managers check that policies are followed. Open items are reviewed quarterly.,"R21, R25",Planned,Quarterly review (R21)
+5.37,Organizational,Documented operating procedures,Yes,"Procedures such as patching, restore tests and leaver steps should be written so more than one person can run them.","R10, R25",Planned,Admin procedures (R10)
+6.1,People,Screening,Yes,Background checks within German law for staff with admin or customer-data access.,,Planned,Owner: Head of Operations
+6.2,People,Terms and conditions of employment,Yes,"Contracts exist, but information security duties are not stated explicitly.",,Partially implemented,Security clause to be added
+6.3,People,"Information security awareness, education and training",Yes,Phishing is the top risk. Policy objective: annual training for all staff.,"R01, R19, R21",Planned,01-scope-policy/information-security-policy.md
+6.4,People,Disciplinary process,Yes,"Deliberate policy breaches need a defined consequence, using the existing HR process.",,Planned,Reference in the policy
+6.5,People,Responsibilities after termination or change of employment,Yes,"Leavers stay bound by confidentiality, and role changes trigger an access review.","R07, R13",Planned,Leaver checklist (R07)
+6.6,People,Confidentiality or non-disclosure agreements,Yes,"Staff, contractors and suppliers may see customer data.",,Partially implemented,Confidentiality clause in contracts to be confirmed
+6.7,People,Remote working,Yes,"Hybrid working: three days a week remote, from home networks and sometimes cafes, and about 12 people read work email on personal phones.","R06, R20, R21",Planned,Remote working rules (R20)
+6.8,People,Information security event reporting,Yes,Policy objective: incidents reported within 24 hours. No reporting channel exists yet.,R19,Planned,Reporting channel (R19)
+7.1,Physical,Physical security perimeters,Yes,Berlin office is a locked space with key access. Keys are not tracked.,R28,Partially implemented,Key list (R28)
+7.2,Physical,Physical entry,Yes,Visitors are not signed in.,R28,Planned,Visitor sign-in (R28)
+7.3,Physical,"Securing offices, rooms and facilities",Yes,"Staff are in the Kreuzberg office two days a week. It holds laptops and network equipment, so it must be locked outside working hours.",R28,Partially implemented,Locked door (R28)
+7.4,Physical,Physical security monitoring,No,Office risk is Low and accepted (R28). CCTV would be disproportionate and raise employee-monitoring concerns under German law.,,Not applicable,Revisit if office risk changes
+7.5,Physical,Protecting against physical and environmental threats,No,"Production runs in Azure data centres, which Microsoft protects. The office holds only laptops and basic network equipment. Reviewed through supplier checks (5.22, 5.23).",,Not applicable,Microsoft's ISO 27001 certificate
+7.6,Physical,Working in secure areas,No,No secure areas exist in the office.,,Not applicable,Revisit if the office changes
+7.7,Physical,Clear desk and clear screen,Yes,Screen-lock guidance covers office and home use. Risk accepted but guidance still given.,R21,Planned,Training content (R21)
+7.8,Physical,Equipment siting and protection,No,No servers or critical equipment on premises. Laptops are covered by 8.1.,,Not applicable,Covered by 8.1
+7.9,Physical,Security of assets off-premises,Yes,Laptops are used at home and while travelling. Disk encryption is not enforced everywhere.,"R05, R20",Partially implemented,Enforce disk encryption (R05)
+7.10,Physical,Storage media,Yes,USB drives can carry data out of the company.,,Planned,Restriction via device management
+7.11,Physical,Supporting utilities,No,No critical systems run on premises. Availability of production is handled by Azure.,,Not applicable,Covered by 8.14
+7.12,Physical,Cabling security,No,No on-premises network infrastructure beyond office internet access.,,Not applicable,Revisit if the office changes
+7.13,Physical,Equipment maintenance,No,No on-premises equipment to maintain. Laptop lifecycle is covered by 8.1 and 7.14.,,Not applicable,"Covered by 8.1, 7.14"
+7.14,Physical,Secure disposal or re-use of equipment,Yes,Old or returned laptops must be wiped before re-use or disposal.,R05,Planned,Wipe step in leaver checklist
+8.1,Technological,User endpoint devices,Yes,"All staff have company laptops, and about 12 also read work email on personal phones. No patch deadline or phone rules.","R04, R05, R06, R20",Partially implemented,"Device management (R04, R06)"
+8.2,Technological,Privileged access rights,Yes,"Azure administrator rights are broad, and not all admins use MFA or passkeys.","R02, R30",Planned,"Passkeys for admins, least privilege (R02)"
+8.3,Technological,Information access restriction,Yes,"Access to the database, support tool and Microsoft 365 data must be limited by role.","R03, R26, R30",Partially implemented,04-policies/access-control-policy.md (Step 6)
+8.4,Technological,Access to source code,Yes,"Source code is StoreSight's core asset. Repositories are private, but MFA is not enforced for every member.","R11, R12",Partially implemented,MFA and single sign-on (R12)
+8.5,Technological,Secure authentication,Yes,"MFA is on email for some staff only. Policy objective: all staff within 3 months, passkeys for admins.","R01, R02, R12, R17",Partially implemented,01-scope-policy/information-security-policy.md
+8.6,Technological,Capacity management,Yes,Azure resources must keep up with customer load to avoid outages.,R16,Planned,Capacity alerts with monitoring (R14)
+8.7,Technological,Protection against malware,Yes,"Microsoft Defender antivirus is on laptops, but not centrally monitored.","R04, R30",Partially implemented,Central endpoint monitoring (R30)
+8.8,Technological,Management of technical vulnerabilities,Yes,Windows updates are automatic but not monitored. No patch deadline and no dependency scanning.,"R04, R29",Partially implemented,14-day patch deadline (R04)
+8.9,Technological,Configuration management,Yes,Azure and database settings are not reviewed regularly.,R03,Planned,Quarterly configuration review (R03)
+8.10,Technological,Information deletion,Yes,Support tickets and customer data need retention limits. GDPR deletion requests must be honoured.,"R22, R26",Planned,Retention limits (R26)
+8.11,Technological,Data masking,Yes,"Sensitive data in support tickets should be masked, and test data anonymised.","R15, R26",Planned,Anonymised test data (R15)
+8.12,Technological,Data leakage prevention,Yes,Unrestricted external sharing and secrets in code are leakage paths.,"R11, R18",Planned,"Sharing limits (R18), secret scanning (R11)"
+8.13,Technological,Information backup,Yes,Backup service exists but restores are never tested and backups are not isolated from ransomware.,"R08, R30",Partially implemented,Quarterly restore test (R08)
+8.14,Technological,Redundancy of information processing facilities,Yes,Single-region setup. Either add failover or formally accept the risk.,R16,Planned,Decision on failover (R16)
+8.15,Technological,Logging,Yes,Only basic Azure activity logs. No central logging or retention period.,R14,Partially implemented,Central logging (R14)
+8.16,Technological,Monitoring activities,Yes,Attacks can go unnoticed without alerts.,"R14, R30",Planned,Defender for Cloud alerts (R14)
+8.17,Technological,Clock synchronization,Yes,"Azure and Microsoft 365 synchronise time by default, which keeps logs reliable.",R14,Implemented,Managed by cloud providers
+8.18,Technological,Use of privileged utility programs,No,No on-premises systems with privileged utilities. Cloud admin tools are covered by 8.2.,,Not applicable,Covered by 8.2
+8.19,Technological,Installation of software on operational systems,Yes,Staff-installed software on laptops adds malware and patching risk. Restrict to an approved list.,R04,Planned,Device management
+8.20,Technological,Networks security,Yes,"Database access is not restricted to private endpoints, and remote networks are untrusted.","R03, R20",Planned,Private endpoints (R03)
+8.21,Technological,Security of network services,Yes,Network services come from Microsoft and internet providers. Security requirements must be defined.,R03,Planned,Azure network settings (R03)
+8.22,Technological,Segregation of networks,Yes,"Production database and test environment should be separated, with no public access to the database.","R03, R15",Planned,Private endpoints (R03)
+8.23,Technological,Web filtering,Yes,Blocking malicious websites reduces phishing impact. Built-in Microsoft features keep cost low.,R01,Planned,Defender web protection
+8.24,Technological,Use of cryptography,Yes,"Azure default encryption at rest, disk encryption on laptops and keys stored in Azure Key Vault.","R05, R27",Partially implemented,Key Vault migration (R27)
+8.25,Technological,Secure development life cycle,Yes,"The company develops StoreSight, so secure development rules are needed.","R11, R12, R29",Partially implemented,Branch protection and code review (R12)
+8.26,Technological,Application security requirements,Yes,Security and privacy requirements for new features should be written before development.,,Planned,Part of project checklist (5.8)
+8.27,Technological,Secure system architecture and engineering principles,Yes,Least privilege and private networking guide Azure design.,"R02, R03",Planned,Azure design principles
+8.28,Technological,Secure coding,Yes,"Secrets must not be in code, and libraries must be kept current.","R11, R29",Planned,"Secret scanning, code review (R11)"
+8.29,Technological,Security testing in development and acceptance,Yes,Dependency scanning and basic security tests before release. Enterprise customers are likely to ask for evidence.,R29,Planned,Dependabot (R29)
+8.30,Technological,Outsourced development,No,"All 15 engineers are employees, and the listed suppliers (payment, support tool, backup) do not develop code. Reassess before hiring external developers.",,Not applicable,"00-company-profile.md (Teams, Third-party suppliers)"
+8.31,Technological,"Separation of development, test and production environments",Yes,"A test environment exists, but production data is sometimes copied into it.",R15,Partially implemented,No production data in test (R15)
+8.32,Technological,Change management,Yes,Changes to production go through branch protection and code review.,R12,Planned,Branch protection (R12)
+8.33,Technological,Test information,Yes,"Test data must be anonymised, not copied from production.",R15,Planned,Anonymised test data (R15)
+8.34,Technological,Protection of information systems during audit testing,Yes,Customer audits and penetration tests must be planned so they do not disrupt production.,,Planned,Audit rules in 05-audit (Step 7)
